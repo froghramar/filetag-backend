@@ -1,0 +1,11 @@
+# IDE and Plugin
+.idea
+
+# Libraries
+node_modules
+
+# Private
+.env
+
+# Output
+package-lock.json
