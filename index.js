@@ -1,9 +1,8 @@
+require('dotenv').config();
+
 const app = require('./express/app');
 const debug = require('debug')('filetag-backend:server');
 const http = require('http');
-const dotenv = require('dotenv');
-
-dotenv.config();
 
 const port = +process.env.PORT;
 app.set('port', port);
