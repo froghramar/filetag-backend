@@ -10,7 +10,7 @@ router.delete('/:collectionId', deleteCollection);
 
 function deleteCollection(req, res, next) {
 
-	const collectionId = req.query.collectionId;
+	const collectionId = req.params.collectionId;
 	const filter = {
 		_id: collectionId
 	};
