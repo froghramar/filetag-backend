@@ -24,10 +24,30 @@ const collectionProvider = (function () {
 		});
 	}
 
+	function updateCollection(collection) {
+		return new Promise((resolve, reject) => {
+			dbService.updateById('Collections', 'collection', collection).then(
+				response => resolve(response),
+				error => reject(error)
+			);
+		});
+	}
+
+	function deleteCollection(filter) {
+		return new Promise((resolve, reject) => {
+			dbService.deleteOne('Collections', 'collection', filter).then(
+				response => resolve(response),
+				error => reject(error)
+			);
+		});
+	}
+
 	return {
 		addCollection: addCollection,
+		deleteCollection: deleteCollection,
 		getCollections: getCollections,
 		getFilteredCollections: getFilteredCollections,
+		updateCollection: updateCollection,
 	}
 })();
 
