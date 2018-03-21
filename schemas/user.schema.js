@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-const collectionSchema = mongoose.Schema({
+const userSchema = mongoose.Schema({
 	_id: {
 		type: String,
 		required: true
 	},
-	Directory: {
+	Email: {
 		type: String,
 		required: true
 	},
@@ -13,10 +13,14 @@ const collectionSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
-	UrlPath: {
+	Roles: [{
+		type: String,
+		enum: ['APPUSER', 'ADMIN']
+	}],
+	UserName: {
 		type: String,
 		required: true
 	},
 });
 
-module.exports = collectionSchema;
+module.exports = userSchema;

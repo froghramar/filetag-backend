@@ -5,15 +5,21 @@ const collectionSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
-	Directory: {
+	Access: {
+		type: String,
+		enum : ['READ','WRITE', 'OWNER'],
+		required: true
+	},
+	ResourceId: {
 		type: String,
 		required: true
 	},
-	Name: {
+	ResourceType: {
 		type: String,
+		enum : ['COLLECTION','FILE'],
 		required: true
 	},
-	UrlPath: {
+	UserId: {
 		type: String,
 		required: true
 	},

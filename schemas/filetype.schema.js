@@ -1,12 +1,15 @@
 const mongoose = require('mongoose');
 
 const fileTypeSchema = mongoose.Schema({
-	_id: String,
+	_id: {
+		type: String,
+		required: true
+	},
+	Extensions: [ String ],
 	Name: {
 		type: String,
 		required: true
 	},
-	Extensions: [String],
 });
 
 module.exports = fileTypeSchema;

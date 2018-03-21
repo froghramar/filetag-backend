@@ -1,22 +1,20 @@
 const mongoose = require('mongoose');
 
-const collectionSchema = mongoose.Schema({
+const fileSchema = mongoose.Schema({
 	_id: {
 		type: String,
 		required: true
 	},
-	Directory: {
+	Extension: {
 		type: String,
 		required: true
 	},
+	LocalPath: String,
 	Name: {
 		type: String,
 		required: true
 	},
-	UrlPath: {
-		type: String,
-		required: true
-	},
+	RemotePath: String,
 });
 
-module.exports = collectionSchema;
+module.exports = fileSchema;
